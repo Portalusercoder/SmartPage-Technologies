@@ -5,6 +5,7 @@ import { Header } from "@/components/Header";
 import { SectionMotion } from "@/components/SectionMotion";
 import { StarLoader } from "@/components/StarLoader";
 import { site } from "@/data/site";
+import { asset } from "@/lib/asset";
 import "./globals.css";
 
 const display = Outfit({
@@ -34,8 +35,8 @@ export const metadata: Metadata = {
     type: "website",
   },
   icons: {
-    icon: "/brand/mark.png",
-    apple: "/brand/mark.png",
+    icon: asset("/brand/mark.png"),
+    apple: asset("/brand/mark.png"),
   },
 };
 

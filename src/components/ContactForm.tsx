@@ -2,10 +2,12 @@
 
 import { FormEvent, useMemo, useState } from "react";
 import { Button } from "@/components/Button";
-import { divisions } from "@/data/site";
+import { divisions, site } from "@/data/site";
 import { cx } from "@/lib/utils";
 
 type FormState = "idle" | "loading" | "success" | "error";
+
+const CONTACT_ENDPOINT = process.env.NEXT_PUBLIC_CONTACT_ENDPOINT ?? "";
 
 const divisionOptions = [
   { value: "technology", label: "Technology" },
@@ -38,39 +40,92 @@ export function ContactForm() {
     const form = event.currentTarget;
     const data = new FormData(form);
 
-    try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          fullName: data.get("fullName"),
-          companyName: data.get("companyName"),
-          email: data.get("email"),
-          phone: data.get("phone"),
-          division: data.get("division"),
-          service: data.get("service"),
-          subject: data.get("subject"),
-          message: data.get("message"),
-        }),
-      });
+    const fields = {
+      fullName: String(data.get("fullName") ?? "").trim(),
+      companyName: String(data.get("companyName") ?? "").trim(),
+      email: String(data.get("email") ?? "").trim(),
+      phone: String(data.get("phone") ?? "").trim(),
+      division: String(data.get("division") ?? "").trim(),
+      service: String(data.get("service") ?? "").trim(),
+      subject: String(data.get("subject") ?? "").trim(),
+      message: String(data.get("message") ?? "").trim(),
+    };
 
-      const payload = (await response.json()) as { message?: string };
-
-      if (!response.ok) {
-        setState("error");
-        setMessage(payload.message || "Something went wrong. Please try again.");
-        return;
-      }
-
-      setState("success");
-      setMessage(payload.message || "Your enquiry has been received.");
-      form.reset();
-      setDivision("");
-      setService("");
-    } catch {
+    if (
+      !fields.fullName ||
+      !fields.email ||
+      !fields.phone ||
+      !fields.division ||
+      !fields.subject ||
+      !fields.message
+    ) {
       setState("error");
-      setMessage("Unable to send your enquiry right now. Please email us directly.");
+      setMessage("Please complete all required fields.");
+      return;
     }
+
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(fields.email)) {
+      setState("error");
+      setMessage("Please enter a valid business email address.");
+      return;
+    }
+
+    // Static hosting (GitHub Pages) has no server route, so submissions go to
+    // an external form endpoint (Formspree, Make, Zapier, etc.) when configured.
+    if (CONTACT_ENDPOINT) {
+      try {
+        const response = await fetch(CONTACT_ENDPOINT, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            ...fields,
+            submittedAt: new Date().toISOString(),
+          }),
+        });
+
+        if (!response.ok) {
+          setState("error");
+          setMessage("Unable to deliver your enquiry. Please try again later.");
+          return;
+        }
+
+        setState("success");
+        setMessage("Thank you. Your enquiry has been sent successfully.");
+        form.reset();
+        setDivision("");
+        setService("");
+      } catch {
+        setState("error");
+        setMessage("Unable to send your enquiry right now. Please email us directly.");
+      }
+      return;
+    }
+
+    // No endpoint configured: open the visitor's email client with the enquiry filled in.
+    const body = [
+      `Full name: ${fields.fullName}`,
+      `Company: ${fields.companyName || "-"}`,
+      `Email: ${fields.email}`,
+      `Phone: ${fields.phone}`,
+      `Division: ${fields.division}`,
+      `Service: ${fields.service || "-"}`,
+      "",
+      fields.message,
+    ].join("\n");
+
+    const href = `mailto:${site.contact.email}?subject=${encodeURIComponent(
+      `[${fields.subject}] ${fields.division}`,
+    )}&body=${encodeURIComponent(body)}`;
+
+    window.location.href = href;
+    setState("success");
+    setMessage("Your email app should open with your enquiry. If it does not, email us directly at " + site.contact.email + ".");
+    form.reset();
+    setDivision("");
+    setService("");
   }
 
   const fieldClass =
@@ -211,11 +266,9 @@ export function ContactForm() {
       </div>
 
       <p className="text-xs leading-relaxed text-muted">
-        Form submissions are handled by the{" "}
-        <code className="rounded bg-surface px-1.5 py-0.5">/api/contact</code>{" "}
-        endpoint. Configure{" "}
-        <code className="rounded bg-surface px-1.5 py-0.5">CONTACT_WEBHOOK_URL</code>{" "}
-        or email delivery credentials to enable production delivery.
+        Enquiries are sent through a form endpoint when{" "}
+        <code className="rounded bg-surface px-1.5 py-0.5">NEXT_PUBLIC_CONTACT_ENDPOINT</code>{" "}
+        is set at build time. Otherwise your email app opens with the enquiry filled in.
       </p>
     </form>
   );

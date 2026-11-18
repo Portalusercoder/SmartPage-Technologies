@@ -5,6 +5,7 @@ import { Focus, Layers, Route } from "lucide-react";
 import { CTASection } from "@/components/CTASection";
 import { DivisionCard } from "@/components/DivisionCard";
 import { divisions } from "@/data/site";
+import { asset } from "@/lib/asset";
 
 export const metadata: Metadata = {
   title: "About Us",
@@ -41,7 +42,7 @@ export default function AboutPage() {
           {/* Dark cinematic hero card */}
           <section className="relative isolate min-h-[42vh] overflow-hidden rounded-[1.75rem] bg-black text-white sm:min-h-[48vh] sm:rounded-[2rem] lg:min-h-[52vh]">
             <Image
-              src="/images/about-office.jpg"
+              src={asset("/images/about-office.jpg")}
               alt=""
               fill
               priority

@@ -1,3 +1,5 @@
+import { asset } from "@/lib/asset";
+
 export const site = {
   name: "Smart Pages Technologies",
   shortName: "SPT",
@@ -62,7 +64,7 @@ export const divisions: Division[] = [
     heroHeading: "Technology infrastructure engineered for critical operations.",
     heroDescription:
       "Smart Pages Technologies designs, implements and manages technology solutions that align with business goals and regulatory requirements.",
-    image: "/images/impact-tech.jpg",
+    image: asset("/images/impact-tech.jpg"),
     services: [
       {
         id: "ict-solutions",
@@ -84,7 +86,7 @@ export const divisions: Division[] = [
           "Operational connectivity requirements",
           "Business system readiness initiatives",
         ],
-        image: "/images/tech-network.jpg",
+        image: asset("/images/tech-network.jpg"),
       },
       {
         id: "security-solutions",
@@ -106,7 +108,7 @@ export const divisions: Division[] = [
           "Operational sites requiring controlled access",
           "Environments needing monitoring support",
         ],
-        image: "/images/tech-security.jpg",
+        image: asset("/images/tech-security.jpg"),
       },
       {
         id: "cybersecurity-solutions",
@@ -128,7 +130,7 @@ export const divisions: Division[] = [
           "Organizations with compliance requirements",
           "Environments needing continuous threat coverage",
         ],
-        image: "/images/tech-security.jpg",
+        image: asset("/images/tech-security.jpg"),
       },
     ],
   },
@@ -143,7 +145,7 @@ export const divisions: Division[] = [
     heroHeading: "Packaging and industrial services that move products to market.",
     heroDescription:
       "Contract packaging, repacking, labeling and corrugated cartons, supported by warehousing and logistics — one partner from production line to shelf.",
-    image: "/images/industries-packing.jpg",
+    image: asset("/images/industries-packing.jpg"),
     services: [
       {
         id: "co-packing",
@@ -165,7 +167,7 @@ export const divisions: Division[] = [
           "Seasonal or project-based packing needs",
           "Brands seeking production support partners",
         ],
-        image: "/images/industries-packing.jpg",
+        image: asset("/images/industries-packing.jpg"),
       },
       {
         id: "corrugated-boxes",
@@ -187,7 +189,7 @@ export const divisions: Division[] = [
           "Product storage and handling",
           "Retail and wholesale packaging needs",
         ],
-        image: "/images/industries-boxes.jpg",
+        image: asset("/images/industries-boxes.jpg"),
       },
       {
         id: "wrapping-solutions",
@@ -209,7 +211,7 @@ export const divisions: Division[] = [
           "Warehouse and storage protection",
           "Production line packaging support",
         ],
-        image: "/images/industries-wrap.jpg",
+        image: asset("/images/industries-wrap.jpg"),
       },
     ],
   },
@@ -224,7 +226,7 @@ export const divisions: Division[] = [
     heroHeading: "Power systems built for continuity.",
     heroDescription:
       "Electrical works, power distribution and backup power solutions — from panel boards and cabling to UPS and standby generation — for facilities where downtime is not an option.",
-    image: "/images/tech-power.jpg",
+    image: asset("/images/tech-power.jpg"),
     services: [
       {
         id: "electrical-solutions",
@@ -246,7 +248,7 @@ export const divisions: Division[] = [
           "Industrial and plant sites",
           "Infrastructure and critical facilities",
         ],
-        image: "/images/tech-power.jpg",
+        image: asset("/images/tech-power.jpg"),
       },
       {
         id: "power-distribution",
@@ -268,7 +270,7 @@ export const divisions: Division[] = [
           "Industrial plants and workshops",
           "Sites preparing for load growth",
         ],
-        image: "/images/impact-energy.jpg",
+        image: asset("/images/impact-energy.jpg"),
       },
       {
         id: "ups-systems",
@@ -290,7 +292,7 @@ export const divisions: Division[] = [
           "Security and life-safety systems",
           "Control rooms and critical processes",
         ],
-        image: "/images/tech-power.jpg",
+        image: asset("/images/tech-power.jpg"),
       },
     ],
   },
@@ -324,28 +326,28 @@ export const capabilities = [
     title: "Technology readiness",
     description:
       "ICT, security, and cybersecurity capabilities that support connected business environments.",
-    image: "/images/tech-network.jpg",
+    image: asset("/images/tech-network.jpg"),
     href: "/divisions/technology",
   },
   {
     title: "Industrial packaging",
     description:
       "Co-packing, corrugated boxes, and wrapping support for production and logistics needs.",
-    image: "/images/industries-packing.jpg",
+    image: asset("/images/industries-packing.jpg"),
     href: "/divisions/industries",
   },
   {
     title: "Power continuity",
     description:
       "Electrical works, distribution, and UPS systems for facilities where downtime is not an option.",
-    image: "/images/tech-power.jpg",
+    image: asset("/images/tech-power.jpg"),
     href: "/divisions/power",
   },
   {
     title: "Cross-division coordination",
     description:
       "A single point of contact that helps route requirements to the right specialized team.",
-    image: "/images/capabilities.jpg",
+    image: asset("/images/capabilities.jpg"),
     href: "/contact",
   },
 ] as const;

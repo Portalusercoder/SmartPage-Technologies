@@ -6,6 +6,7 @@ import { CTASection } from "@/components/CTASection";
 import { PageHero } from "@/components/PageHero";
 import { SectionHeading } from "@/components/SectionHeading";
 import { capabilities, divisions } from "@/data/site";
+import { asset } from "@/lib/asset";
 
 export const metadata: Metadata = {
   title: "Our Work",
@@ -23,7 +24,7 @@ export default function OurWorkPage() {
         ]}
         title="Expertise in Action."
         description="A capabilities-focused overview of how Smart Pages Technologies supports businesses. Project case studies will be published when approved materials are available."
-        image="/images/capabilities.jpg"
+        image={asset("/images/capabilities.jpg")}
       />
 
       <section className="container-page py-16 sm:py-20">

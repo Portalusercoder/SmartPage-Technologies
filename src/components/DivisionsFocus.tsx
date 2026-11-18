@@ -6,6 +6,7 @@ import { useEffect, useRef } from "react";
 import { Cpu, Package, Zap } from "lucide-react";
 import { CircleArrowLink } from "@/components/CircleArrowLink";
 import { divisions } from "@/data/site";
+import { asset } from "@/lib/asset";
 import { setBrandRedTheme } from "@/lib/page-theme";
 import { cx } from "@/lib/utils";
 import type { LucideIcon } from "lucide-react";
@@ -131,7 +132,7 @@ export function DivisionsFocus() {
               </h2>
               <span className="relative inline-block h-10 w-16 overflow-hidden rounded-xl sm:h-12 sm:w-20">
                 <Image
-                  src="/images/capabilities.jpg"
+                  src={asset("/images/capabilities.jpg")}
                   alt=""
                   fill
                   className="object-cover"

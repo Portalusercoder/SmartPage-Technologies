@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { asset } from "@/lib/asset";
 import { cx } from "@/lib/utils";
 
 type Props = {
@@ -25,7 +26,7 @@ export function BrandMark({
       aria-label="Smart Pages Technologies home"
     >
       <Image
-        src="/brand/mark.png"
+        src={asset("/brand/mark.png")}
         alt=""
         width={40}
         height={40}

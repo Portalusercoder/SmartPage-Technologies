@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { asset } from "@/lib/asset";
 
 type Props = {
   src?: string;
@@ -14,7 +15,7 @@ type Props = {
  * all positions are sin/cos of a 0→2π phase for a perfect seamless loop.
  */
 export function LiquidHeroBackground({
-  src = "/images/hero-ribbed.jpg",
+  src = asset("/images/hero-ribbed.jpg"),
   durationSec = 96,
   className,
 }: Props) {
