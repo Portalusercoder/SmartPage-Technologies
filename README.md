@@ -29,9 +29,9 @@ The enquiry form posts to `/api/contact`.
 
 - `/` Home
 - `/about`
-- `/divisions/technology` (+ ICT, Security, Power)
+- `/divisions/technology` (+ ICT, Security, Cybersecurity)
 - `/divisions/industries` (+ Co-packing, Corrugated Boxes, Wrapping)
-- `/divisions/food-beverages` (+ Cafeteria)
+- `/divisions/power` (+ Electrical, Distribution, UPS)
 - `/our-work`
 - `/contact`
 - `/privacy-policy`

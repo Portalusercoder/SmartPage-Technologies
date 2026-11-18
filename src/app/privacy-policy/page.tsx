@@ -15,7 +15,6 @@ export default function PrivacyPolicyPage() {
           { label: "Home", href: "/" },
           { label: "Privacy Policy" },
         ]}
-        eyebrow="Legal"
         title="Privacy Policy"
         description="This page outlines how Smart Pages Technologies handles information collected through this website."
       />

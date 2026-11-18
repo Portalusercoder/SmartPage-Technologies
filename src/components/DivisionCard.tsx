@@ -16,10 +16,7 @@ export function DivisionCard({ division }: { division: Division }) {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
         <div className="absolute inset-x-0 bottom-0 p-5">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-white/70">
-            Division
-          </p>
-          <h3 className="mt-1 font-display text-2xl font-semibold text-white">
+          <h3 className="font-display text-2xl font-semibold text-white">
             {division.name}
           </h3>
         </div>

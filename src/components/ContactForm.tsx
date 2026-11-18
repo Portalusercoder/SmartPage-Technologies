@@ -10,7 +10,7 @@ type FormState = "idle" | "loading" | "success" | "error";
 const divisionOptions = [
   { value: "technology", label: "Technology" },
   { value: "industries", label: "Industries" },
-  { value: "food-beverages", label: "Food & Beverages" },
+  { value: "power", label: "Power" },
   { value: "general", label: "General Enquiry" },
 ] as const;
 

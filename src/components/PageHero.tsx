@@ -2,11 +2,11 @@ import Image from "next/image";
 import type { ReactNode } from "react";
 import { Breadcrumb, type Crumb } from "@/components/Breadcrumb";
 import { Button } from "@/components/Button";
+import { Reveal } from "@/components/Reveal";
 import { cx } from "@/lib/utils";
 
 type Props = {
   crumbs?: Crumb[];
-  eyebrow?: string;
   title: ReactNode;
   description?: string;
   image?: string;
@@ -17,7 +17,6 @@ type Props = {
 
 export function PageHero({
   crumbs,
-  eyebrow,
   title,
   description,
   image,
@@ -35,12 +34,7 @@ export function PageHero({
       <div className="container-page py-14 sm:py-20">
         {crumbs ? <Breadcrumb items={crumbs} /> : null}
         <div className={cx("grid gap-10", image && "lg:grid-cols-[1.15fr_0.85fr] lg:items-end")}>
-          <div>
-            {eyebrow ? (
-              <p className="mb-4 text-xs font-semibold uppercase tracking-[0.22em] text-accent">
-                {eyebrow}
-              </p>
-            ) : null}
+          <Reveal eager className="min-w-0">
             <h1 className="font-display max-w-4xl text-4xl font-semibold tracking-tight text-balance sm:text-5xl lg:text-6xl">
               {title}
             </h1>
@@ -69,9 +63,9 @@ export function PageHero({
                 ) : null}
               </div>
             )}
-          </div>
+          </Reveal>
           {image ? (
-            <div className="relative aspect-[4/3] overflow-hidden rounded-[2rem] bg-surface">
+            <Reveal eager delay={120} className="relative aspect-[4/3] overflow-hidden rounded-[2rem] bg-surface">
               <Image
                 src={image}
                 alt=""
@@ -80,7 +74,7 @@ export function PageHero({
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 40vw"
               />
-            </div>
+            </Reveal>
           ) : null}
         </div>
       </div>

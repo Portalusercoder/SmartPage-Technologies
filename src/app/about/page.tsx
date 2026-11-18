@@ -1,61 +1,114 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { Focus, Layers, Route } from "lucide-react";
 import { CTASection } from "@/components/CTASection";
 import { DivisionCard } from "@/components/DivisionCard";
-import { PageHero } from "@/components/PageHero";
-import { SectionHeading } from "@/components/SectionHeading";
-import { StarAccent } from "@/components/StarAccent";
-import { divisions, whyChooseUs } from "@/data/site";
+import { divisions } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "Learn about Smart Pages Technologies — one company with specialized capabilities across technology, industries, and food and beverages.",
+    "Learn about Smart Pages Technologies — one company with specialized capabilities across technology, power, and industries.",
 };
+
+const principles = [
+  {
+    title: "Clarity",
+    description:
+      "Three specialized divisions under one identity, so you always know where to take your requirement.",
+    icon: Layers,
+  },
+  {
+    title: "Adaptability",
+    description:
+      "Each division focuses on practical offerings shaped around real operational and commercial needs.",
+    icon: Route,
+  },
+  {
+    title: "Focus",
+    description:
+      "Enquiries are directed to the team best placed to understand and support what you need.",
+    icon: Focus,
+  },
+] as const;
 
 export default function AboutPage() {
   return (
     <>
-      <PageHero
-        crumbs={[
-          { label: "Home", href: "/" },
-          { label: "About Us" },
-        ]}
-        eyebrow="About Us"
-        title="One Company. Three Areas of Expertise."
-        description="Smart Pages Technologies brings together specialized capabilities across technology, industrial packaging, and food and beverage services under one corporate identity."
-        image="/images/about-office.jpg"
-      />
+      <div className="bg-[#ececec] pb-4 pt-[4.25rem] sm:pb-6 sm:pt-[4.75rem]">
+        <div className="container-page">
+          {/* Dark cinematic hero card */}
+          <section className="relative isolate min-h-[42vh] overflow-hidden rounded-[1.75rem] bg-black text-white sm:min-h-[48vh] sm:rounded-[2rem] lg:min-h-[52vh]">
+            <Image
+              src="/images/about-office.jpg"
+              alt=""
+              fill
+              priority
+              className="object-cover opacity-55"
+              sizes="100vw"
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/45 to-black/70" />
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_70%_40%,rgba(237,37,37,0.28),transparent_55%)]" />
 
-      <section className="container-page py-16 sm:py-20">
-        <div className="grid gap-10 lg:grid-cols-2 lg:items-start">
-          <SectionHeading
-            title="Company introduction"
-            description="Smart Pages Technologies is a diversified organization structured around three business divisions. Each division focuses on a distinct set of services while remaining part of one parent company."
-          />
-          <div className="rounded-[1.75rem] bg-surface p-7 sm:p-8">
-            <h3 className="font-display text-xl font-semibold tracking-tight">
-              Company overview
-            </h3>
-            <p className="mt-4 text-sm leading-relaxed text-muted sm:text-base">
-              Through Technology, Industries, and Food & Beverages, the company
-              aims to address diverse operational and commercial requirements.
-              Visitors can explore each division independently while understanding
-              how they connect under the Smart Pages Technologies identity.
+            <div className="relative z-10 flex min-h-[42vh] flex-col px-5 py-5 sm:min-h-[48vh] sm:px-8 sm:py-6 lg:min-h-[52vh]">
+              <p className="font-display text-sm font-semibold tracking-[0.08em] text-white/90">
+                Smart Pages
+              </p>
+
+              <div className="flex flex-1 items-center justify-center py-8 sm:py-10">
+                <h1 className="font-display text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl xl:text-7xl">
+                  About Us
+                </h1>
+              </div>
+            </div>
+          </section>
+
+          {/* Principles panel */}
+          <section className="mt-3 rounded-[1.75rem] bg-[#f4f4f2] px-5 py-9 sm:mt-4 sm:rounded-[2rem] sm:px-8 sm:py-12 lg:px-12 lg:py-14">
+            <span className="inline-flex rounded-md bg-black/[0.06] px-2.5 py-1 text-xs font-medium text-foreground/60">
+              Principles
+            </span>
+
+            <p className="font-display mt-6 max-w-4xl text-2xl font-semibold leading-[1.15] tracking-tight text-balance sm:mt-7 sm:text-3xl lg:text-[2.35rem]">
+              Smart Pages Technologies is built on a simple idea:{" "}
+              <span className="text-foreground/35">
+                business requirements should feel clear, not overwhelming.
+              </span>{" "}
+              We focus on how specialized divisions work together under one
+              corporate identity.
             </p>
-          </div>
-        </div>
-      </section>
 
+            <div className="mt-8 grid gap-3 sm:mt-10 sm:grid-cols-3 sm:gap-4">
+              {principles.map(({ title, description, icon: Icon }) => (
+                <article
+                  key={title}
+                  className="rounded-[1.5rem] bg-white p-6 sm:p-7"
+                >
+                  <div className="mb-8 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-[#1a1a1a] text-white">
+                    <Icon className="h-5 w-5" strokeWidth={1.75} />
+                  </div>
+                  <h2 className="font-display text-xl font-semibold tracking-tight">
+                    {title}
+                  </h2>
+                  <p className="mt-3 text-sm leading-relaxed text-muted sm:text-[0.95rem]">
+                    {description}
+                  </p>
+                </article>
+              ))}
+            </div>
+          </section>
+        </div>
+      </div>
+
+      {/* Mission / Vision placeholders */}
       <section className="bg-black py-16 text-white sm:py-24">
         <div className="container-page grid gap-8 lg:grid-cols-2">
           <div className="rounded-[1.75rem] border border-white/10 p-7 sm:p-9">
-            <div className="mb-4 flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-accent">
-              <StarAccent />
+            <h2 className="font-display text-2xl font-semibold tracking-tight text-balance">
               Mission
-            </div>
-            <p className="font-display text-2xl font-semibold tracking-tight text-balance">
+            </h2>
+            <p className="mt-4 font-display text-xl font-semibold tracking-tight text-balance text-white/90">
               [Mission statement placeholder — awaiting approved content]
             </p>
             <p className="mt-4 text-sm leading-relaxed text-white/60">
@@ -64,11 +117,10 @@ export default function AboutPage() {
             </p>
           </div>
           <div className="rounded-[1.75rem] border border-white/10 p-7 sm:p-9">
-            <div className="mb-4 flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-accent">
-              <StarAccent />
+            <h2 className="font-display text-2xl font-semibold tracking-tight text-balance">
               Vision
-            </div>
-            <p className="font-display text-2xl font-semibold tracking-tight text-balance">
+            </h2>
+            <p className="mt-4 font-display text-xl font-semibold tracking-tight text-balance text-white/90">
               [Vision statement placeholder — awaiting approved content]
             </p>
             <p className="mt-4 text-sm leading-relaxed text-white/60">
@@ -79,58 +131,30 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-surface py-16 sm:py-24">
+      {/* Divisions */}
+      <section className="bg-white py-16 sm:py-24">
         <div className="container-page">
-          <SectionHeading
-            title="Our business divisions"
-            description="Explore the three specialized divisions that make up Smart Pages Technologies."
-            className="mb-10"
-          />
+          <div className="mb-10 max-w-2xl">
+            <h2 className="font-display text-3xl font-semibold tracking-tight sm:text-4xl">
+              Three areas of expertise.
+            </h2>
+          </div>
           <div className="grid gap-5 lg:grid-cols-3">
             {divisions.map((division) => (
               <DivisionCard key={division.id} division={division} />
             ))}
           </div>
-        </div>
-      </section>
-
-      <section className="container-page py-16 sm:py-24">
-        <SectionHeading
-          title="Why choose us"
-          description="Practical strengths that guide how we work with businesses."
-          className="mb-10"
-        />
-        <div className="grid gap-4 sm:grid-cols-2">
-          {whyChooseUs.map((item) => (
-            <div
-              key={item.title}
-              className="rounded-[1.5rem] border border-black/8 p-6"
+          <p className="mt-8 text-sm text-muted">
+            Looking for a specific offering?{" "}
+            <Link
+              href="/contact"
+              className="font-medium text-accent hover:text-accent-hover"
             >
-              <h3 className="font-display text-xl font-semibold tracking-tight">
-                {item.title}
-              </h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted">
-                {item.description}
-              </p>
-            </div>
-          ))}
+              Get in touch
+            </Link>{" "}
+            and we will direct your enquiry to the appropriate division.
+          </p>
         </div>
-        <div className="relative mt-12 aspect-[21/9] overflow-hidden rounded-[2rem]">
-          <Image
-            src="/images/capabilities.jpg"
-            alt=""
-            fill
-            className="object-cover"
-            sizes="100vw"
-          />
-        </div>
-        <p className="mt-6 text-sm text-muted">
-          Looking for a specific offering?{" "}
-          <Link href="/contact" className="font-medium text-accent hover:text-accent-hover">
-            Get in touch
-          </Link>{" "}
-          and we will direct your enquiry to the appropriate division.
-        </p>
       </section>
 
       <CTASection />

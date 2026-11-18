@@ -30,12 +30,12 @@ export function BrandMark({
         width={40}
         height={40}
         priority={priority}
-        className="h-9 w-9 object-contain"
+        className="h-8 w-8 object-contain sm:h-9 sm:w-9"
       />
       {showWordmark ? (
         <span
           className={cx(
-            "font-display text-[0.95rem] font-semibold tracking-tight leading-none sm:text-[1.05rem]",
+            "font-display text-[0.85rem] font-semibold tracking-tight leading-none sm:text-[0.95rem]",
             tone === "dark" ? "text-white" : "text-foreground",
           )}
         >

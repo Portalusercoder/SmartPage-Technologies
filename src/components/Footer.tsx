@@ -21,8 +21,8 @@ export function Footer() {
             <BrandMark tone="dark" />
             <p className="mt-5 text-sm leading-relaxed text-white/60">
               Smart Pages Technologies brings together specialized capabilities
-              across technology, industrial packaging, and food and beverage
-              services under one corporate identity.
+              across technology, power, and industrial packaging services under
+              one corporate identity.
             </p>
             <div className="mt-6 flex gap-3">
               {Object.entries(site.social).map(([name, href]) => (

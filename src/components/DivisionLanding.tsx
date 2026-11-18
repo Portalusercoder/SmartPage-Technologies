@@ -16,7 +16,6 @@ export function DivisionLanding({ division }: { division: Division }) {
           { label: "Divisions", href: "/#divisions" },
           { label: division.name },
         ]}
-        eyebrow="Division"
         title={division.heroHeading}
         description={division.heroDescription}
         image={division.image}
@@ -26,7 +25,6 @@ export function DivisionLanding({ division }: { division: Division }) {
 
       <section className="container-page py-16 sm:py-20">
         <SectionHeading
-          eyebrow="Introduction"
           title={`${division.name} at Smart Pages Technologies`}
           description={division.description}
         />
@@ -59,10 +57,7 @@ export function DivisionLanding({ division }: { division: Division }) {
                   />
                 </div>
                 <div className="flex flex-col justify-center p-7 sm:p-10">
-                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">
-                    Service 0{index + 1}
-                  </p>
-                  <h3 className="mt-3 font-display text-3xl font-semibold tracking-tight">
+                  <h3 className="font-display text-3xl font-semibold tracking-tight">
                     {service.name}
                   </h3>
                   <p className="mt-4 text-base leading-relaxed text-muted">

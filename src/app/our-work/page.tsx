@@ -10,7 +10,7 @@ import { capabilities, divisions } from "@/data/site";
 export const metadata: Metadata = {
   title: "Our Work",
   description:
-    "Explore the capabilities of Smart Pages Technologies across technology, industries, and food and beverages.",
+    "Explore the capabilities of Smart Pages Technologies across technology, power, and industries.",
 };
 
 export default function OurWorkPage() {
@@ -21,7 +21,6 @@ export default function OurWorkPage() {
           { label: "Home", href: "/" },
           { label: "Our Work" },
         ]}
-        eyebrow="Our Work"
         title="Expertise in Action."
         description="A capabilities-focused overview of how Smart Pages Technologies supports businesses. Project case studies will be published when approved materials are available."
         image="/images/capabilities.jpg"

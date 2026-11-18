@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { DM_Sans, Outfit } from "next/font/google";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { SectionMotion } from "@/components/SectionMotion";
+import { StarLoader } from "@/components/StarLoader";
 import { site } from "@/data/site";
 import "./globals.css";
 
@@ -20,7 +22,7 @@ const body = DM_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} | Technology, Industry & Everyday Experiences`,
+    default: `${site.name} | Technology, Power & Industry`,
     template: `%s | ${site.name}`,
   },
   description: site.description,
@@ -44,6 +46,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${display.variable} ${body.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-background text-foreground">
+        <StarLoader />
+        <SectionMotion />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

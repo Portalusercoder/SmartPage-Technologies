@@ -1,9 +1,9 @@
 export const site = {
   name: "Smart Pages Technologies",
   shortName: "SPT",
-  tagline: "Technology. Industry. Everyday Experiences.",
+  tagline: "Technology. Power. Industry.",
   description:
-    "Smart Pages Technologies brings together specialized capabilities across technology, industrial packaging, and food and beverage services to support businesses across multiple sectors.",
+    "Smart Pages Technologies brings together three specialised divisions — technology, power, and industrial packaging — to help organizations operate with confidence.",
   url: "https://smartpagetech.com",
   contact: {
     email: "info@smartpagetech.com",
@@ -24,7 +24,7 @@ export const site = {
   },
 } as const;
 
-export type DivisionId = "technology" | "industries" | "food-beverages";
+export type DivisionId = "technology" | "industries" | "power";
 
 export type Service = {
   id: string;
@@ -55,13 +55,13 @@ export const divisions: Division[] = [
     id: "technology",
     name: "Technology",
     shortDescription:
-      "ICT infrastructure, security systems, and power solutions for modern operations.",
+      "ICT infrastructure, security systems, and cybersecurity for modern operations.",
     description:
-      "Technology infrastructure, security systems, and power solutions designed to support modern business operations.",
+      "Technology infrastructure, networks, and cybersecurity solutions designed to support modern business operations.",
     href: "/divisions/technology",
-    heroHeading: "Technology Solutions for a Connected World.",
+    heroHeading: "Technology infrastructure engineered for critical operations.",
     heroDescription:
-      "Explore our technology capabilities across ICT infrastructure, security systems, and power solutions designed to support business operations.",
+      "Smart Pages Technologies designs, implements and manages technology solutions that align with business goals and regulatory requirements.",
     image: "/images/impact-tech.jpg",
     services: [
       {
@@ -70,14 +70,14 @@ export const divisions: Division[] = [
         shortName: "ICT",
         href: "/divisions/technology/ict-solutions",
         summary:
-          "Information and communication technology solutions that strengthen connectivity, systems, and day-to-day operations.",
+          "Structured and fiber-optic cabling with switching, routing and wireless networks built to standard.",
         overview:
-          "Our ICT Solutions focus on practical technology foundations that help organizations stay connected, organized, and operationally ready.",
+          "The network is the physical backbone of every digital service. We deliver infrastructure and network solutions from the cable plant up — structured copper cabling, fiber-optic backbones, and the active network that runs over them. Every installation is designed, labelled, tested and documented so the network can be expanded and maintained with confidence.",
         capabilities: [
-          "Network and infrastructure planning support",
+          "Structured copper and fiber-optic cabling",
+          "Switching, routing and wireless networks",
           "Systems integration aligned to business needs",
-          "Communication technology advisory",
-          "Implementation coordination with stakeholders",
+          "Documented handover for long-term maintainability",
         ],
         applications: [
           "Office and facility technology environments",
@@ -94,7 +94,7 @@ export const divisions: Division[] = [
         summary:
           "Security systems and protective technology approaches designed to support safer business environments.",
         overview:
-          "Our Security Solutions help organizations address physical and digital security requirements with clear, practical approaches.",
+          "Our Security Solutions help organizations address physical and digital security requirements with clear, practical approaches — from surveillance and access to facility-ready protective systems.",
         capabilities: [
           "Security system assessment support",
           "Surveillance and access-oriented solutions",
@@ -109,26 +109,26 @@ export const divisions: Division[] = [
         image: "/images/tech-security.jpg",
       },
       {
-        id: "power-solutions",
-        name: "Power Solutions",
-        shortName: "Power",
-        href: "/divisions/technology/power-solutions",
+        id: "cybersecurity-solutions",
+        name: "Cybersecurity Solutions",
+        shortName: "Cybersecurity",
+        href: "/divisions/technology/cybersecurity-solutions",
         summary:
-          "Power-related solutions that support continuity, reliability, and operational readiness.",
+          "Protect your people, network, devices and data from internal and external threats.",
         overview:
-          "Our Power Solutions are designed to help businesses maintain dependable power-related infrastructure for critical and everyday operations.",
+          "Our cybersecurity approach combines identity, application and data protection with continuous threat and vulnerability management. Programs are aligned with each organization's regulatory obligations and risk appetite, and supported by services that keep security effective after deployment.",
         capabilities: [
-          "Power continuity planning support",
-          "Infrastructure readiness assessments",
-          "Solution recommendations for facility needs",
-          "Coordination across technical stakeholders",
+          "Identity, application and data protection",
+          "Threat and vulnerability management",
+          "Programs aligned to regulatory obligations",
+          "Ongoing security operations support",
         ],
         applications: [
-          "Facilities requiring reliable power support",
-          "Business-critical operational environments",
-          "Sites preparing for technology expansion",
+          "Enterprise and government networks",
+          "Organizations with compliance requirements",
+          "Environments needing continuous threat coverage",
         ],
-        image: "/images/tech-power.jpg",
+        image: "/images/tech-security.jpg",
       },
     ],
   },
@@ -140,9 +140,9 @@ export const divisions: Division[] = [
     description:
       "Industrial packaging and production capabilities across co-packing, corrugated boxes, and wrapping solutions.",
     href: "/divisions/industries",
-    heroHeading: "Packaging Solutions for Business Needs.",
+    heroHeading: "Packaging and industrial services that move products to market.",
     heroDescription:
-      "Discover our industrial capabilities across co-packing, corrugated boxes, and wrapping solutions.",
+      "Contract packaging, repacking, labeling and corrugated cartons, supported by warehousing and logistics — one partner from production line to shelf.",
     image: "/images/industries-packing.jpg",
     services: [
       {
@@ -214,39 +214,83 @@ export const divisions: Division[] = [
     ],
   },
   {
-    id: "food-beverages",
-    name: "Food & Beverages",
+    id: "power",
+    name: "Power",
     shortDescription:
-      "Food and beverage services through our cafeteria offering.",
+      "Electrical installation, power distribution, UPS and backup generation for critical facilities.",
     description:
-      "Food and beverage services through our cafeteria offering.",
-    href: "/divisions/food-beverages",
-    heroHeading: "Food and Beverage Services for Everyday Needs.",
+      "SmartPage Power is the electrical and power division of the group. It brings together electrical installation, distribution, backup power and maintenance capabilities for commercial, industrial and infrastructure projects.",
+    href: "/divisions/power",
+    heroHeading: "Power systems built for continuity.",
     heroDescription:
-      "Discover our food and beverage offering through the Smart Pages Technologies cafeteria.",
-    image: "/images/food-cafeteria.jpg",
+      "Electrical works, power distribution and backup power solutions — from panel boards and cabling to UPS and standby generation — for facilities where downtime is not an option.",
+    image: "/images/tech-power.jpg",
     services: [
       {
-        id: "cafeteria",
-        name: "Cafeteria",
-        shortName: "Cafeteria",
-        href: "/divisions/food-beverages/cafeteria",
+        id: "electrical-solutions",
+        name: "Electrical Solutions",
+        shortName: "Electrical",
+        href: "/divisions/power/electrical-solutions",
         summary:
-          "A cafeteria offering designed to support everyday food and beverage needs in a welcoming service environment.",
+          "Complete internal and external electrical works — power, lighting and panel boards.",
         overview:
-          "Our cafeteria provides food and beverage services as part of the Smart Pages Technologies Food & Beverages division.",
+          "Electrical installation is the foundation every other building system depends on. We deliver internal and external electrical works, from containment and cabling to final connections and lighting. Works are executed to approved drawings and inspected and tested before energization.",
         capabilities: [
-          "Daily food and beverage service",
-          "A setting suited to workplace and visitor needs",
-          "Straightforward menu categories (details forthcoming)",
-          "Service-focused hospitality experience",
+          "Power & lighting installation for buildings and sites",
+          "External electrical works and site lighting",
+          "Panel board installation, termination and testing",
+          "Earthing and lightning protection systems",
         ],
         applications: [
-          "Workplace dining needs",
-          "Visitor and guest refreshments",
-          "Everyday food and beverage service",
+          "Commercial and public buildings",
+          "Industrial and plant sites",
+          "Infrastructure and critical facilities",
         ],
-        image: "/images/food-cafeteria.jpg",
+        image: "/images/tech-power.jpg",
+      },
+      {
+        id: "power-distribution",
+        name: "Power Distribution",
+        shortName: "Distribution",
+        href: "/divisions/power/power-distribution",
+        summary:
+          "Low-voltage switchgear, distribution boards and cabling that deliver power safely to every load.",
+        overview:
+          "A well-designed distribution system delivers stable power, protects people and equipment, and leaves room for future load. We supply and install LV distribution from the main switchboard to the final circuit, with load schedules, discrimination and cable sizing reviewed so protection operates correctly under fault conditions.",
+        capabilities: [
+          "Main and sub-main switchboard supply and installation",
+          "Final distribution boards and sub-circuits",
+          "Armoured and unarmoured power cabling with containment",
+          "Power factor correction and related upgrades",
+        ],
+        applications: [
+          "Commercial facilities and campuses",
+          "Industrial plants and workshops",
+          "Sites preparing for load growth",
+        ],
+        image: "/images/impact-energy.jpg",
+      },
+      {
+        id: "ups-systems",
+        name: "UPS Systems",
+        shortName: "UPS",
+        href: "/divisions/power/ups-systems",
+        summary:
+          "Uninterruptible power for IT, security and life-safety loads that cannot drop.",
+        overview:
+          "Even a momentary interruption can corrupt data or stop a critical process. We size, supply, install and commission UPS systems that bridge every outage and condition incoming power. Designs cover redundancy level, battery autonomy, bypass arrangements and monitoring integration.",
+        capabilities: [
+          "Online double-conversion UPS for sensitive loads",
+          "Modular and redundant N+1 configurations",
+          "Battery systems sized for required autonomy",
+          "UPS monitoring with network and BMS integration",
+        ],
+        applications: [
+          "IT and data environments",
+          "Security and life-safety systems",
+          "Control rooms and critical processes",
+        ],
+        image: "/images/tech-power.jpg",
       },
     ],
   },
@@ -256,7 +300,7 @@ export const whyChooseUs = [
   {
     title: "Multiple specialized divisions",
     description:
-      "Technology, industrial packaging, and food and beverage capabilities operate under one corporate identity.",
+      "Technology, power, and industrial packaging capabilities operate under one corporate identity.",
   },
   {
     title: "Customer-focused approach",
@@ -279,7 +323,7 @@ export const capabilities = [
   {
     title: "Technology readiness",
     description:
-      "ICT, security, and power-related capabilities that support connected business environments.",
+      "ICT, security, and cybersecurity capabilities that support connected business environments.",
     image: "/images/tech-network.jpg",
     href: "/divisions/technology",
   },
@@ -291,11 +335,11 @@ export const capabilities = [
     href: "/divisions/industries",
   },
   {
-    title: "Food & beverage service",
+    title: "Power continuity",
     description:
-      "Cafeteria services that support everyday dining and refreshment requirements.",
-    image: "/images/food-cafeteria.jpg",
-    href: "/divisions/food-beverages",
+      "Electrical works, distribution, and UPS systems for facilities where downtime is not an option.",
+    image: "/images/tech-power.jpg",
+    href: "/divisions/power",
   },
   {
     title: "Cross-division coordination",

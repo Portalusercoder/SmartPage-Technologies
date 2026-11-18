@@ -18,9 +18,10 @@ export function MegaMenu({ open, onNavigate }: Props) {
       id="divisions-menu"
       role="menu"
       aria-label="Our Divisions"
-      className="absolute left-1/2 top-full z-50 mt-3 w-[min(920px,calc(100vw-2rem))] -translate-x-1/2 animate-menu-in"
+      className="absolute left-1/2 top-full z-50 w-[min(920px,calc(100vw-2rem))] -translate-x-1/2 pt-8 animate-menu-in"
     >
-      <div className="overflow-hidden rounded-[1.75rem] border border-black/8 bg-white shadow-[0_30px_80px_rgba(0,0,0,0.12)]">
+      {/* pt-8 creates visual space under the pill; padding keeps hover continuous */}
+      <div className="theme-chrome-light overflow-hidden rounded-[1.75rem] border border-black/8 bg-white shadow-[0_30px_80px_rgba(0,0,0,0.12)]">
         <div className="grid gap-0 md:grid-cols-3">
           {divisions.map((division, index) => (
             <div

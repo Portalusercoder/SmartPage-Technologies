@@ -2,7 +2,6 @@ import type { ReactNode } from "react";
 import { cx } from "@/lib/utils";
 
 type Props = {
-  eyebrow?: string;
   title: ReactNode;
   description?: ReactNode;
   align?: "left" | "center";
@@ -11,7 +10,6 @@ type Props = {
 };
 
 export function SectionHeading({
-  eyebrow,
   title,
   description,
   align = "left",
@@ -26,16 +24,6 @@ export function SectionHeading({
         className,
       )}
     >
-      {eyebrow ? (
-        <p
-          className={cx(
-            "mb-3 text-xs font-semibold uppercase tracking-[0.22em]",
-            tone === "dark" ? "text-accent" : "text-accent",
-          )}
-        >
-          {eyebrow}
-        </p>
-      ) : null}
       <h2
         className={cx(
           "font-display text-3xl font-semibold tracking-tight text-balance sm:text-4xl lg:text-5xl",

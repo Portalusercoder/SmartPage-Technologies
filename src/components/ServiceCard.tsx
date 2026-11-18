@@ -7,7 +7,6 @@ import { ArrowUpRight } from "lucide-react";
 import { cx } from "@/lib/utils";
 
 type Props = {
-  label: string;
   title: string;
   href: string;
   image?: string;
@@ -16,7 +15,6 @@ type Props = {
 };
 
 export function ServiceCard({
-  label,
   title,
   href,
   image,
@@ -29,7 +27,7 @@ export function ServiceCard({
     <Link
       href={href}
       className={cx(
-        "group relative flex min-h-[220px] flex-col justify-between overflow-hidden rounded-[1.75rem] p-5 transition-all duration-500 focus-ring sm:min-h-[260px]",
+        "group relative flex min-h-[220px] flex-col justify-end overflow-hidden rounded-[1.75rem] p-5 transition-all duration-500 focus-ring sm:min-h-[260px]",
         active
           ? "bg-black text-white shadow-[0_24px_50px_rgba(0,0,0,0.2)]"
           : "bg-surface text-foreground hover:bg-surface-soft",
@@ -51,17 +49,6 @@ export function ServiceCard({
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/55 to-black/20" />
         </>
       ) : null}
-
-      <div className="relative z-10">
-        <span
-          className={cx(
-            "inline-flex rounded-full px-3 py-1 text-[0.7rem] font-semibold uppercase tracking-[0.16em]",
-            active ? "bg-white/15 text-white" : "bg-white text-muted",
-          )}
-        >
-          {label}
-        </span>
-      </div>
 
       <div className="relative z-10">
         <h3 className="font-display text-xl font-semibold tracking-tight sm:text-2xl">

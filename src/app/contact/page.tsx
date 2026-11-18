@@ -17,7 +17,6 @@ export default function ContactPage() {
           { label: "Home", href: "/" },
           { label: "Contact Us" },
         ]}
-        eyebrow="Contact"
         title="Let's Talk About Your Requirements."
         description="Share a few details about your enquiry and our team will route it to the right division."
       />

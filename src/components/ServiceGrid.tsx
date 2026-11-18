@@ -9,7 +9,6 @@ export function ServiceGrid({ featuredId = "ict-solutions" }: { featuredId?: str
       {services.map((service) => (
         <ServiceCard
           key={service.id}
-          label={service.divisionName}
           title={service.name}
           href={service.href}
           image={service.image}

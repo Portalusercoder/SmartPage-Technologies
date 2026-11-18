@@ -19,7 +19,6 @@ export function ServiceDetail({ division, service, faqs = [] }: Props) {
           { label: division.name, href: division.href },
           { label: service.name },
         ]}
-        eyebrow={division.name}
         title={service.name}
         description={service.summary}
         image={service.image}

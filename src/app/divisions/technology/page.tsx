@@ -5,7 +5,7 @@ import { getDivision } from "@/data/site";
 export const metadata: Metadata = {
   title: "Technology",
   description:
-    "Explore Smart Pages Technologies capabilities across ICT infrastructure, security systems, and power solutions.",
+    "Explore Smart Pages Technologies capabilities across ICT infrastructure, security systems, and cybersecurity.",
 };
 
 export default function TechnologyPage() {

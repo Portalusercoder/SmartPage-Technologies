@@ -35,7 +35,7 @@ export function MobileNavigation({ open, onClose }: Props) {
         aria-label="Close menu"
         onClick={onClose}
       />
-      <div className="absolute inset-y-0 right-0 flex w-full max-w-md flex-col bg-white shadow-2xl animate-menu-in">
+      <div className="theme-chrome-light absolute inset-y-0 right-0 flex w-full max-w-md flex-col bg-white shadow-2xl animate-menu-in">
         <div className="flex items-center justify-between border-b border-black/6 px-5 py-4">
           <BrandMark />
           <button
